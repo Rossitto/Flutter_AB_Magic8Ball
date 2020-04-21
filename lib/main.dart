@@ -39,6 +39,12 @@ class _BallState extends State<Ball> {
         onPressed: () {
           setState(() {
             ballNumber = Random().nextInt(5) + 1;
+            Scaffold.of(context).showSnackBar(
+              SnackBar(
+                content: Text('Ball Number = $ballNumber'),
+                duration: Duration(milliseconds: 500),
+              ),
+            );
           });
           print("I got pressed! Ball Number = $ballNumber");
         },
